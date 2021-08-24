@@ -1,0 +1,40 @@
+<form [formGroup]="defForm" class="row m-0 p-0" autocomplete="off">
+  <div class="col-6 p-0 m-0 form-group">
+    <label for="">id</label>
+    <input type="number" min="0" class="form-control" formControlName="id">
+  </div>
+  <div class="col-6 p-0 m-0 form-group">
+    <label for="">عنوان بالعربي</label>
+    <input type="number" min="0" class="form-control" formControlName="titleAr">
+  </div>
+  <div class="col-6 p-0 m-0 form-group">
+    <label for="">عنوان بالانجليزي</label>
+    <input type="number" min="0" class="form-control" formControlName="titleEn">
+  </div>
+  <div class="col-6 p-0 m-0 form-group">
+    <label for="">وصف بالعربي</label>
+    <input type="number" min="0" class="form-control" formControlName="descriptionAr">
+  </div>
+  <div class="col-6 p-0 m-0 form-group">
+    <label for="">وصف بالانجليزي</label>
+    <input type="number" min="0" class="form-control" formControlName="descriptionEn">
+  </div>
+  <div class="col-6 p-0 m-0 form-group">
+    <label for="">تكرار</label>
+    <input type="number" min="0" class="form-control" formControlName="repeation">
+  </div>
+  <div class="col-12 p-0 m-0 form-group">
+    <div formGroupName="form" class="row">
+      <div class="col-12">
+        <app-fields-document [fieldForm]="fieldForm" [arrayFieldIndex]='j' (deleteField)="deleteFieldsById($event)"
+          *ngFor="let fieldForm of fields.controls;let j=index"></app-fields-document>
+      </div>
+      <div class="col-12">
+        <button type="button" class="btn btn-info" (click)="addFieldsToForm()">+</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-6 p-0 m-0 mt-2 form-group">
+    <button class="btn btn-danger" type="button" (click)=deleteDefFormItem(arrayDefIndex)>حذف المقطع</button>
+  </div>
+</form>
