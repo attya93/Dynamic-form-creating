@@ -1,23 +1,26 @@
-<form [formGroup]="defForm" class="row m-0 p-0" autocomplete="off">
+<form [formGroup]="defForm" class="row  m-0 p-0" autocomplete="off">
+  <div class="col-12  card-header">
+    <p class="h5 text-infi">مقطع ({{arrayDefIndex}})</p>
+  </div>
   <div class="col-6 p-0 m-0 form-group">
     <label for="">id</label>
     <input type="number" min="0" class="form-control" formControlName="id">
   </div>
   <div class="col-6 p-0 m-0 form-group">
     <label for="">عنوان بالعربي</label>
-    <input type="number" min="0" class="form-control" formControlName="titleAr">
+    <input type="text" min="0" class="form-control" formControlName="titleAr">
   </div>
   <div class="col-6 p-0 m-0 form-group">
     <label for="">عنوان بالانجليزي</label>
-    <input type="number" min="0" class="form-control" formControlName="titleEn">
+    <input type="text" class="form-control" formControlName="titleEn">
   </div>
   <div class="col-6 p-0 m-0 form-group">
     <label for="">وصف بالعربي</label>
-    <input type="number" min="0" class="form-control" formControlName="descriptionAr">
+    <input type="text" class="form-control" formControlName="descriptionAr">
   </div>
   <div class="col-6 p-0 m-0 form-group">
     <label for="">وصف بالانجليزي</label>
-    <input type="number" min="0" class="form-control" formControlName="descriptionEn">
+    <input type="text" class="form-control" formControlName="descriptionEn">
   </div>
   <div class="col-6 p-0 m-0 form-group">
     <label for="">تكرار</label>
@@ -29,7 +32,7 @@
         <app-fields-document [fieldForm]="fieldForm" [arrayFieldIndex]='j' (deleteField)="deleteFieldsById($event)"
           *ngFor="let fieldForm of fields.controls;let j=index"></app-fields-document>
       </div>
-      <div class="col-12">
+      <div class="col-12 card-footer">
         <button type="button" class="btn btn-info" (click)="addFieldsToForm()">+</button>
       </div>
     </div>

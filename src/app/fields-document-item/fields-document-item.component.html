@@ -1,1 +1,54 @@
-<p>fields-document-item works!</p>
+<div class="row p-0 m-0">
+  <div class="col-md-12 col-sm-12 p-0 m-0">
+    <form [formGroup]="f" class="row" (ngSubmit)="submit()">
+      <div class="form-group col-md-6 m-0 p-0">
+        <label for="">نوع الحقل</label>
+        <select #filed (change)="getFieldId(filed.value)" class="form-control form-select" formControlName="fieldType">
+          <option [value]="field.id" *ngFor="let field of typeOfInputFields">
+            {{ field.title }}
+          </option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="">(name attribute) اسم الحقل </label>
+        <input type="text" class="form-control" formControlName="fieldName" />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="">Regx </label>
+        <input type="text" class="form-control" dir="ltr" formControlName="regxField" />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="">رسالة في حالة الخطاء </label>
+        <input type="text" class="form-control" formControlName="errorMessage" />
+      </div>
+      <div class="form-group col-md-6" *ngIf="holdFiledId == 5">
+        <label for="">متعدد عناصر </label>
+        <select class="form-control form-select" formControlName="multiFiles">
+          <option [value]="field.id" *ngFor="let field of filedRequired">
+            {{ field.title }}
+          </option>
+        </select>
+      </div>
+      <div class="form-group col-md-12" formArrayName="subOptionField"
+        *ngIf="holdFiledId == 7 || holdFiledId == 8 || holdFiledId == 9">
+        <label for="">اختيارات الحقل متعددة </label>
+        <div *ngFor="let option of subOptionField.controls; let i = index">
+          <div class="d-flex justify-content-between w-100" [formGroup]="option">
+            <input type="text" formControlName="key" placeholder="ley" class="form-control" />
+            <input type="text" formControlName="value" placeholder="value" class="form-control mx-1" />
+            <button type="button" class="btn btn-danger" (click)="deleteSubOption(i)">
+              -
+            </button>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="addSubOption()">
+          +
+        </button>
+      </div>
+      <div class="col-md-12">
+        <button type="submit" class="btn btn-primary">حفظ</button>
+      </div>
+    </form>
+    <a class="btn btn-warning" [routerLink]="['/createDocument']" [routerLinkActive]="true">انشاء ملف</a>
+  </div>
+</div>

@@ -1,43 +1,46 @@
 <form [formGroup]="fieldForm" class="row m-0 p-0" autocomplete="off">
+  <div class="col-12 card-header">
+    <p class="h5 text-info">حقول ({{arrayFieldIndex}})</p>
+  </div>
   <div class="col-6 p-0 m-0 form-group">
     <label for="">id</label>
     <input type="number" min="0" class="form-control" formControlName="id">
   </div>
   <div class="col-6 p-0 m-0 form-group">
     <label for=""> afterText</label>
-    <input type="number" min="0" class="form-control" formControlName="afterText">
+    <input type="text" class="form-control" formControlName="afterText">
   </div>
   <div class="col-6 p-0 m-0 form-group">
     <label for="">description</label>
-    <input type="number" min="0" class="form-control" formControlName="description">
+    <input type="text" class="form-control" formControlName="description">
   </div>
   <div class="col-6 p-0 m-0 form-group">
     <label for="">errorMessage</label>
-    <input type="number" min="0" class="form-control" formControlName="errorMessage">
+    <input type="text" class="form-control" formControlName="errorMessage">
   </div>
   <div class="col-6 p-0 m-0 form-group">
     <label for="">fieldId</label>
-    <input type="number" min="0" class="form-control" formControlName="fieldId">
+    <input type="text" class="form-control" formControlName="fieldId">
   </div>
   <div class="col-6 p-0 m-0 form-group">
     <label for="">hidden</label>
-    <input type="number" min="0" class="form-control" formControlName="hidden">
+    <input type="text" class="form-control" formControlName="hidden">
   </div>
   <div class="col-6 p-0 m-0 form-group">
     <label for="">inline</label>
-    <input type="number" min="0" class="form-control" formControlName="inline">
+    <input type="text" class="form-control" formControlName="inline">
   </div>
   <div class="col-6 p-0 m-0 form-group">
     <label for="">order</label>
-    <input type="number" min="0" class="form-control" formControlName="order">
+    <input type="text" class="form-control" formControlName="order">
   </div>
   <div class="col-6 p-0 m-0 form-group">
     <label for="">padding</label>
-    <input type="number" min="0" class="form-control" formControlName="padding">
+    <input type="text" class="form-control" formControlName="padding">
   </div>
   <div class="col-6 p-0 m-0 form-group">
     <label for="">preText</label>
-    <input type="number" min="0" class="form-control" formControlName="preText">
+    <input type="text" class="form-control" formControlName="preText">
   </div>
   <div class="col-6 p-0 m-0 form-group">
     <label for="">repeatable</label>
@@ -45,17 +48,17 @@
   </div>
   <div class="col-6 p-0 m-0 form-group">
     <label for="">required</label>
-    <input type="number" min="0" class="form-control" formControlName="required">
+    <input type="text" class="form-control" formControlName="required">
   </div>
   <div class="col-6 p-0 m-0 form-group">
     <label for="">title</label>
-    <input type="number" min="0" class="form-control" formControlName="title">
+    <input type="text" class="form-control" formControlName="title">
   </div>
   <div class="col-6 p-0 m-0 form-group">
     <label for="">underText</label>
-    <input type="number" min="0" class="form-control" formControlName="underText">
+    <input type="text" class="form-control" formControlName="underText">
   </div>
-  <div class="col-6 p-0 m-0 mt-2 form-group">
+  <div class="col-12  m-0 mt-2 mb-2 form-group card-footer">
     <button class="btn btn-danger" type="button" (click)=deleteFieldsFormItem(arrayFieldIndex)>حذف </button>
   </div>
 </form>
