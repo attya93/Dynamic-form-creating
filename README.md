@@ -1,27 +1,19 @@
 # FormBuilder
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.10.
+this way make nesting of forms is more easy and understand, you will implement complex form in easy way
 
-## Development server
+## issue
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1- imagine you have formGroup({formArray([formGroup({formArray([formGrouo({})])})]}) , how gard you can implement this soluation in normal way
+2- this way garenty to you no momery cashing or error in refrance 
 
-## Code scaffolding
+## main view
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1- you create normal form with getter to help you to access form-control ,form-array, form-group
+2- you static method to insure there are not object referance in momery
+3- use input and output to pass formGroup and index of form-array
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## developer
+1- Mohammed Mamdouh (me :) )
+2- omar saleam
+3- tareak ramdan
